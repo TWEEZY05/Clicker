@@ -16,15 +16,16 @@ function initTimer(maxTime) {
     } else if (maxTime === 0) {
       clearInterval(timer);
       timesLeft.textContent = `У Вас Осталось ${maxTime} Секунд`;
-    };
+      resetSec()
+    }
   }, 1000);
-};
+}
 
 clickButton.addEventListener("click", () => {
   if (counter === 0) {
     initTimer(5);
     setTimeout(timeIsOut, 5000);
-  };
+  }
 
   counter++;
 
@@ -38,4 +39,8 @@ NICE ONE!`);
   counter = 0;
 
   textGame.textContent = `${counter}!`;
-};
+  
+}
+function resetSec() {
+  timesLeft.textContent = `У Вас Осталось 5 Секунд`;
+}
